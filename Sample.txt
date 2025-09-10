@@ -1,0 +1,233 @@
+Hi,
+I hope you're doing well.
+My name is Pushpalatha, and I’m a Senior Recruiter at Atlassian. Congratulations on successfully clearing your KARAT interview!
+I’m excited to move you forward to the next stage of the selection process, which will consist of five interview rounds. These interviews are designed to assess various core competencies and are part of our evaluation process for the R&D Engineering Team at Atlassian. Please note that each round is eliminative.
+
+Interview Rounds Overview:
+1.	Round 1 & 2 – Code Design (LLD) and Data Structures
+A)	Code Design:
+This section primarily focuses on Low-Level Design (LLD). Candidates are expected to use appropriate design principles such as Classes, Models, UML Diagrams, and Interfaces to develop structured and scalable solutions.
+B)	Data Structures and Algorithms:
+This section evaluates your problem-solving ability using core data structures and algorithms.We encourage you to prepare thoroughly and use these samples as a starting point for your practice.
+2.	Round 3 – System Design, with a focus on High-Level Design (HLD)
+3.	Round 4 – Managerial Round
+4.	Round 5 – Values Interview, focused on Atlassian’s core values:
+o	Open company, no bullshit
+o	Build with heart and balance
+o	Don’t #@!% the customer
+o	Play as a team
+o	Be the change you seek
+
+5 pillars on which you will be evaluated for code Design and Data Structures
+
+
+I. Decision Making :
+● This capability gives us an insight into your problem solving thought process and
+technical depth and breath that you carry with you.
+● So for every given problem we expect you to speak about 3 or 4 different approaches.
+● Speak about the pros and cons of each approach, pick the best approach, speak about
+the tradeoffs, and use it for implementation.
+● We want to know more about the reasoning behind your thoughts.
+
+II. Code Quality :
+● Under this, we expect candidates to write production ready code.
+● You would have to break down the bigger problem into smaller components and discuss
+these in conceptual terms.
+● The code written should be modular, and easily reusable in the future.
+● It should be maintainable and easily scalable.
+● We expect you to write Unit Test cases as a best practice.
+● Try to make sure that it covers all the good cases, bad cases, boundary condition or edge
+cases.
+● It is better if you follow Test Driven Development approach but that’s fine if you are
+comfortable writing tests at the end.
+● Have a Unit Testing Framework like JUnit if Java / PyTest for Python.
+● Dont write tests in Main. It is not Valid. The key idea is to use structured and automated
+testing methods instead of ad hoc testing in the main function.
+● But please make sure that you test the code or else it might be a red flag.
+
+III. Conceptual thinking :
+● We want to see a good understanding of programming fundamentals and concepts
+● You will have to cover the below topics
+● Time/Space complexity
+● Big O Notation - best case, worst case, average case.
+● Reliability
+● Adaptability of code in different scenarios and environments
+● Performance
+● Overall Optimisation of code
+
+IV. Resourcefulness :
+● Under this we let people use Google, StackOverflow or documentation of your choice.
+● The idea of the whole interview is to understand how you work on a day-to-day basis.
+● So we encourage you to use common investigation techniques.
+● You can use Debuggers and Print Statements if you need a mini logging and monitoring
+set up, just to see if your code is working as intended. But also note, this cannot be
+considered as testing. Unit testing has to be separate.
+● Just in case if you feel that you got stuck, and if you are not able to unblock yourself and
+if you are losing 10-15mins, ask the panel directly to help you out. That should be fine.
+Better to keep moving forward as much as possible.
+
+V. Adaptability :
+● This is to understand the behavioral side of the candidate. They’ll try to capture a couple
+of signals on what kind of thought process you bring to the table.
+● They’ll try to understand how easy it is to work with you. So they’ll try to challenge your
+decisions and see how you defend yourself.
+● Also, they’ll try to understand how you react to uncertainty and unblock yourself. If you
+are solving the problem in a particular way, they’ll ask you to stop in between and
+suggest a completely different approach, just to see how you unblock yourself.
+● They’ll see how you think from a long term perspective while building something. Not
+just for the interview’s purpose, but if you have to reuse this code in the future, how
+would you think?
+● Finally, your solutions have to be customer centric, like putting the customer first.
+
+
+
+I have included a few sample questions below that reflect the types of problems typically encountered in Round 1, covering both Code Design and Data Structures. Please treat this information as strictly confidential and refrain from sharing it with others. These questions are provided solely to help you gain a basic understanding of the nature and scope of the interview, and should not be interpreted as actual or guaranteed interview questions.
+
+
+Data Structures Question Bank
+Question 1)	Find the closest Org for target Employees
+a)	Imagine you are the team that maintains the Atlassian employee directory. At Atlassian – there are multiple groups, and each can have one or more groups. Every employee is part of a group. You are tasked with designing a system that could find the closest common parent group giv a target set of employees in the organization.
+b)	The Atlassian hierarchy sometimes can have shared group across an org or employees shared across different groups – How will the code evolve n this case if the requirement is to provide ONE closest common group
+c)	The system now introduced 4 methods to update the structure of the hierarchy in the org. Supose these dynamic updates are done in separate threads while getCommonGroupForEmployees is being called, How ill your system handled reads and writes into the system efficiently such that at any given time getCommonGroupForEmployees always reflects the latest updated state of the hierarchy?
+d)	The company consists of a single level of  groups with no subgroups. Each group has a set of employees.
+
+Question 2)	Expanding Tennis Club
+a)	Implement a function that given a list of tennis court cookings with start and finish times, returns a plan assigning each booking to a specific court, ensuring each court is used by only one booking at a time and using the minimum amount of courts with unlimites number of courts available.
+An example of the booking record might look like
+
+Class BookingRecord:
+Id: int//ID of the booking
+Start_time: int
+Finish_time: int
+
+And our function is going to look like:
+
+List<Court> assignCourts(List<BookingRecord> bookingRecords)
+
+b)	After each booking, a fixed amount of time, X, is needed to maintain the court before it can be rented again
+c)	Court only need maintainenece after X amount of usage
+How would you modify the code if each court also had a Y maintainence time that occurred after X bookings?
+The function should now become something like
+Def assign_court_with_maintainence(booking_records: list{BookingRecord],
+
+Maintainence_time: int,
+
+Durability:  int) -> list[Court]:
+d)	The original problem can be made simpler by removing the “assigning each booking to a specific court” part. The candidate needs to find the minimum number of courts needed to accommodate all the bookings
+e)	Check if booking conflict  - Write a function that if given two bookings to check if they conflict with each other
+
+Question 3)	Commodity Prices
+Imagine you are given a stream of data points consisting of <timestamp, commodityPrice> you are supposed to return the maxCommodityPrice at any point in time. 
+The timestamps in the stream can be out of order, or there can be duplicate timestamps, we need to update the commodityPrice at that particular timestamp if an entry for the timestamp already exists
+Create an in-memory solution tailored to prioritize frequent reads and writes for the given problem statement
+
+Can we reduce the time complexity of the getMaxCommodityPrice to O(1) if the language does not support it? This can be done using a variable to keep the maxPrice value, but we need to update it when performing the upsert operations.
+
+Question 4)	Popular content
+Imagine you are given a stream of content ids along with an associated action to be performed on them
+Example of contents are video, pages, posts etc. There can be two actions associated with a content id:
+•	increasePopularity -> increases the popularity of the content by 1. The popularity increases when someone comments on the content or likes the comtent
+•	decreasePopularity-> decreases the popularity of the content by 1. The popularity decreases when a spam bot’s/users comments are deleted from the content or its likes are removed from the content
+•	content ids are positive integers
+Implement a class that can return the mostPopular content id at any time while consuming the stream of content ids and its associated action. If there are no contentIds with popularity greater than 0, return -1
+
+Question 5) Weighted Graph
+Imagine we have a network with N nodes. Each node has a label (a name). Between two nodes, there is a value of time in milliseconds that indicates how long a packet can be transmitted from one node to the other. Be noted that this is one-way direction which means packet can be transmitted the other way around with different time value, or, even prohibited.
+Given 2 node labels (source and destination), write a function that answers the following questions:
+Can a packet transmit from the source node to the destination node?
+If yes, what is the shortest time that a packet can transmit from the source node to the destination node?
+
+Question 6) - Job Interval Reporting
+CI pipeline count
+Atlassian runs a lot of CI pipelines and our team is tasked to  build some reporting on the usage to find some cost optimisation patterns.
+Each CI pipeline starts at a given time X and ends at Y. We are given a list of CI pipeline time windows {X,Y}.
+[{X,Y}, {X`, Y`}, ….]
+ 
+Objective:
+Find the time windows where at least one CI pipeline is running.
+
+ Input:
+ [{2, 5}, {12, 15}, {4, 8}]
+ Output: [{2, 8}, {12, 15}]
+ Explanation: The windows in minimum where at least one job is running are {2, 8} and {12, 15}
+
+
+
+
+Code Design Question Bank
+
+Question 1)	Customer Satisfaction
+a)	Imagine we have a customer support ticketing system. The system allows customers to rate the support agent out of 5. To start with, write a function which accepts a rating, and another which will show me all of the agents and the average ratingeach one has received, ordered highest to lowest.
+b)	Currently your solution does not account for what happens if two agents have the same average rating. What options are there for handling ties and how can we implement that in code?
+c)	Now I want to be able to see who the best agents are each month. Change the implementation so I can get that information.
+d)	Write a new function that will allow me to export of each agent’s average ratings per month. You can export in any format you like- for example csv,json or xml.
+e)	Make it return the average ratings unsorted./ Make it return the total rating for each agent without the average
+
+
+Question 2)	Middleware Router
+a)	We want to implement a middleware router for our web service, which based on the path returns different strings
+Our interface for the router looks something like:
+
+Interface Router {
+Fun addRoute(path: String, result: String) : Unit;
+Fun callRoute(path:String) :String;
+}
+
+Usage:
+Router.addRoute(“/bar” , “result)
+Router.callRoute(“/bar”) -> “result”
+
+
+Question 3)	Game of Snakes
+         Remember the old phone game of snake? The snake can move up, down, left or right in a 2Dimensional board of arbitrary size. 
+Lets try to pmplement the bae logic of this game
+Rules: 
+•	Every time moveSnake() is called, the snake moves up, down, left or right
+•	The snake’s initial size is 3 and grows by 1 every 5 moves
+•	The game ends when the snake hits itself
+
+We can use the following as a starting point (pseudo-code):
+Interface SnakeGame {
+moveSnake(snakeDirection);
+isGameOver();
+}
+
+Question 4)	Cost Explorer
+Imagine you are working on payments team at Atlassian. A customer subscribes to Jira and is interested in exploring how much it ‘ill cost them to keep using the product for the rest of the year
+Your task is to develop a CostExplorer that calculates the total cost a customer has to pay in a unit year . This means that at any day of the year they should be able to get a provisional report giving monthly/yearly cost estimated.
+
+CostExplorer should be able to provide a report of –
+
+1)	Monthly cost (Generate a bill for each month, including bill amount for future months for the unit year)
+2)	Yearly cost estimated(for the unit year)
+
+Level 0 : Multiple Plans for a Product
+
+Question 5)  F1 Last Lap Hero
+
+Design and implement a program that accepts lap times for Formula 1 race drivers. Return the "Last Lap Hero" - the driver who had the biggest improvement on their last lap compared to their average lap time. 
+
+Question 6) Cinema Screenings
+Let’s pretend we are in charge of a cinema. We want to figure out whether a new movie can be added to the existing schedule without removing any of the current movies
+Note that:
+The cinema opens at 10.00
+The last possible end time for a movie is 23.00
+Movie durations include setting up the room before the movie begins and cleaning it up afterward. In other words, if for example a movie ends at 14.00, the next movie can start at 14.00
+Movie start times are expressed in minutes starting from midnight, so for example,10am would be 10*60 = 600
+Question 7) Deployment Notification
+
+You are working on a deployment notification service for keeping developers informed about when their changes have been deployed.
+The service should provide two interfaces, one to receive an event and another to send out a batch of notifications for any received events.
+An event contains a version number, a list of authors, and a status indicating if the deployment has started, completed, or failed.
+Deployment notifications should include the author and the version in which their changes were deployed.
+The goal is to notify code change authors on the first time their changes are deployed successfully for each unique set of code changes   
+
+Thank you.
+I hope the above information assists you in preparing effectively for your interviews with Atlassian. Please feel free to reach out to me via message or call if you have any further questions after reviewing the details—I’ll be happy to assist you.
+
+Thank You
+Wishing you All the best for your preparation and Interviews
+
+Follow me on Linkedin - https://www.linkedin.com/in/pushpalatha-s-k-72999b23/
+Pushpalatha  SK
+Senior Recruiter
